@@ -11,12 +11,14 @@ class API(object):
         return self.api_url + method + '.' + data_type
 
     def _api_response(self, response):
-        """Converts the json response into python data types."""
+        """
+        Converts the json response into python data types.
+        """
         json_response = json.loads(response.text)
         json_response['status_code'] = response.status_code
         return json_response
 
-    def post_to_api(self, method_name, payload):
+    def post(self, method_name, payload):
         url = self._method_url(method_name)
 
         json_data = json.dumps(payload)

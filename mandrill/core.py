@@ -5,7 +5,9 @@ import requests
 
 
 class Mandrill(object):
-    """Mandrill client object"""
+    """
+    Mandrill client object
+    """
     
     def __init__(self, api_key, from_email=None):
         self.api_key = api_key
@@ -39,13 +41,17 @@ class Mandrill(object):
 
     # Convenience methods
     def send_mail(self, options):  
-        """Send an e-mail"""
+        """
+        Send an e-mail
+        """
 
         api_method_url = self.api_url + 'messages/send.json'
         return
 
     def send_template(self, options):
-        """Send an e-mail using a template stored in Mandrill"""
+        """
+        Send an e-mail using a template stored in Mandrill
+        """
 
         api_method_url = self.api_url + 'messages/send_template.json'
 
